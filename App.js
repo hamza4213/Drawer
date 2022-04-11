@@ -14,17 +14,17 @@ export default function App() {
   const [selectedcolor, setSelectedcolor] = useState("#ef3365");
   console.log("App js selcted color", selectedcolor);
   return (
-    <View style={styles.container}>
-      {/* // <NavigationContainer>
-    //   <Stack.Navigator screenOptions={{ headerShown:false }}>
-    //   <Stack.Screen name="Home" component={Home} />
-    //   <Stack.Screen name="Customers" component={Customers} />
-    //   </Stack.Navigator>
-    //   </NavigationContainer> */}
-      <Drawer selectedcolor={selectedcolor} />
-      {/* <TabBar /> */}
-      <Customers colors={colors} setSelectedcolor={setSelectedcolor} />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Customers" component={Customers} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    // <View style={styles.container}>
+    //   <Drawer selectedcolor={selectedcolor} />
+    //   {/* <TabBar /> */}
+    //   <Customers colors={colors} setSelectedcolor={setSelectedcolor} />
+    // </View>
   );
 }
 
