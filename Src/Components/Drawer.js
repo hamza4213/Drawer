@@ -8,16 +8,17 @@ import {
   ScrollView,
 } from "react-native";
 import Customers from "../../Screens/Customers";
-export default function Drawer({ navigation }) {
+export default function Drawer(props) {
   const [expanded, setExpanded] = useState(false);
-
+  const { selectedcolor } = props;
   const handlePress = () => setExpanded(!expanded);
+  // console.log(selectedcolor);
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       {expanded && (
         <View
           style={{
-            backgroundColor: "#EF3265",
+            backgroundColor: selectedcolor,
             width: 62,
             alignItems: "center",
             justifyContent: "center",
@@ -164,7 +165,7 @@ export default function Drawer({ navigation }) {
           // marginLeft: 1.5,
           borderBottomRightRadius: 15,
           borderTopRightRadius: 15,
-          backgroundColor: "#EF3265",
+          backgroundColor: selectedcolor,
           // position: "relative",
           // marginTop: "50%",
         }}

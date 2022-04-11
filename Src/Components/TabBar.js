@@ -9,8 +9,8 @@ import {
 import React, { useState } from "react";
 
 export default function TabBar(props) {
-  const { txt, setIndexofitem, indexofitem } = props;
-  // console.log(txt);
+  const { txt, setIndexofitem, indexofitem, setSelectedcolor, colors } = props;
+  // console.log(colors);
   return (
     <View
       style={{
@@ -75,18 +75,20 @@ export default function TabBar(props) {
               // console.log(index);
               return (
                 <TouchableOpacity
-                  onPress={() => setIndexofitem(index)}
+                  onPress={() => {
+                    setIndexofitem(index), setSelectedcolor(colors[index]);
+                  }}
                   style={{
                     marginHorizontal: 5,
                     backgroundColor:
                       indexofitem === 0 && indexofitem == index
-                        ? "#ef3365"
+                        ? colors[0]
                         : indexofitem === 1 && indexofitem == index
-                        ? "#26985d"
+                        ? colors[1]
                         : indexofitem === 2 && indexofitem == index
-                        ? "#1c98be"
+                        ? colors[2]
                         : indexofitem === 3 && indexofitem == index
-                        ? "yellow"
+                        ? colors[3]
                         : "#E8E8E8",
                     borderRadius: 10,
                     justifyContent: "center",

@@ -6,10 +6,13 @@ import Customers from "./Screens/Customers";
 import Drawer from "./Src/Components/Drawer";
 import TabBar from "./Src/Components/TabBar";
 import Home from "./Screens/Home";
-
+import React, { useState } from "react";
 const Stack = createStackNavigator();
 
 export default function App() {
+  const colors = ["#ef3365", "#26985d", "#1c98be", "yellow"];
+  const [selectedcolor, setSelectedcolor] = useState("#ef3365");
+  console.log("App js selcted color", selectedcolor);
   return (
     <View style={styles.container}>
       {/* // <NavigationContainer>
@@ -18,9 +21,9 @@ export default function App() {
     //   <Stack.Screen name="Customers" component={Customers} />
     //   </Stack.Navigator>
     //   </NavigationContainer> */}
-      <Drawer />
-      {/* <TabBar/> */}
-      {/* <Customers /> */}
+      <Drawer selectedcolor={selectedcolor} />
+      {/* <TabBar /> */}
+      <Customers colors={colors} setSelectedcolor={setSelectedcolor} />
     </View>
   );
 }
@@ -28,8 +31,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    // alignItems: 'center',
-    justifyContent: "center",
+    // backgroundColor: "#000",
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });

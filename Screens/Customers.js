@@ -3,16 +3,18 @@ import React, { useState } from "react";
 import TabBar from "../Src/Components/TabBar";
 import Drawer from "../Src/Components/Drawer";
 
-export default function Customers() {
+export default function Customers(props) {
   const data = ["Customers", "Potentials", "Leads", "Reports"];
   const [indexofitem, setIndexofitem] = useState(null);
-
+  const { setSelectedcolor, colors } = props;
   return (
     <View>
       <TabBar
         txt={data}
         indexofitem={indexofitem}
         setIndexofitem={setIndexofitem}
+        setSelectedcolor={setSelectedcolor}
+        colors={colors}
       />
       {indexofitem === 0 ? (
         <Text style={{ alignSelf: "center" }}>Customers Component here</Text>
