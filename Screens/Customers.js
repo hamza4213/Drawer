@@ -8,7 +8,7 @@ export default function Customers(props) {
   const [indexofitem, setIndexofitem] = useState(null);
   const { setSelectedcolor, colors } = props;
   return (
-    <View>
+    <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
       <TabBar
         txt={data}
         indexofitem={indexofitem}

@@ -8,11 +8,15 @@ import {
   ScrollView,
 } from "react-native";
 import Customers from "../../Screens/Customers";
+import { useNavigation } from "@react-navigation/native";
+
 export default function Drawer(props) {
   const [expanded, setExpanded] = useState(false);
   const { selectedcolor } = props;
   const handlePress = () => setExpanded(!expanded);
   // console.log(selectedcolor);
+  const navigation = useNavigation();
+
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       {expanded && (
