@@ -13,25 +13,21 @@ export default function App() {
   const colors = ["#ef3365", "#26985d", "#1c98be", "yellow"];
   const [selectedcolor, setSelectedcolor] = useState("#ef3365");
   console.log("App js selcted color", selectedcolor);
+  
   return (
-    <NavigationContainer>
+     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Customers" component={Customers} />
       </Stack.Navigator>
     </NavigationContainer>
-    // <View style={styles.container}>
-    //   <Drawer selectedcolor={selectedcolor} />
-    //   {/* <TabBar /> */}
-    //   <Customers colors={colors} setSelectedcolor={setSelectedcolor} />
-    // </View>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "#000",
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "space-between",

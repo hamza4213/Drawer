@@ -8,7 +8,12 @@ export default function Customers(props) {
   const [indexofitem, setIndexofitem] = useState(null);
   const { setSelectedcolor, colors } = props;
   return (
-    <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
+    <View style={{ justifyContent: "center", flexDirection:"row",alignItems: "center", flex: 1 }}>
+         
+         <View>
+         <Drawer selectedcolor={"#ef3365"} />
+           </View> 
+        
       <TabBar
         txt={data}
         indexofitem={indexofitem}

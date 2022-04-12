@@ -16,7 +16,7 @@ export default function TabBar(props) {
       style={{
         height: 97,
         width: "100%",
-        // backgroundColor:"gray",
+        backgroundColor:"white",
         flexDirection: "row",
       }}
     >
@@ -82,13 +82,13 @@ export default function TabBar(props) {
                     marginHorizontal: 5,
                     backgroundColor:
                       indexofitem === 0 && indexofitem == index
-                        ? colors[0]
+                        ? "#ef3365"
                         : indexofitem === 1 && indexofitem == index
-                        ? colors[1]
+                        ? "#26985d"
                         : indexofitem === 2 && indexofitem == index
-                        ? colors[2]
+                        ? "#1c98be"
                         : indexofitem === 3 && indexofitem == index
-                        ? colors[3]
+                        ? "yellow"
                         : "#E8E8E8",
                     borderRadius: 10,
                     justifyContent: "center",

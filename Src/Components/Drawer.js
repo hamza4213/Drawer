@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -16,7 +16,12 @@ export default function Drawer(props) {
   const handlePress = () => setExpanded(!expanded);
   // console.log(selectedcolor);
   const navigation = useNavigation();
-
+useEffect(() => {
+  
+  return () => {
+    
+  };
+}, [selectedcolor]);
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       {expanded && (
@@ -29,6 +34,15 @@ export default function Drawer(props) {
           }}
         >
           <ScrollView showsVerticalScrollIndicator={false}>
+           
+          <TouchableOpacity style={styles.touch}>
+              <Image
+                style={styles.image}
+                source={require("../Icons/Home.png")}
+              />
+              <Text style={styles.text}>Home</Text>
+            </TouchableOpacity>
+
             <TouchableOpacity style={styles.touch}>
               <Image
                 style={styles.image}
