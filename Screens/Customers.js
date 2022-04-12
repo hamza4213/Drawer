@@ -13,14 +13,12 @@ export default function Customers(props) {
   const colors = ["#ef3365", "#26985d", "#1c98be", "yellow"];
 
   return (
-    // <SafeAreaView style={{flex:1}}>
 
     <View style={{  flexDirection:"row", flex:1 }}>
-         
-         <View style={{alignSelf:"center"}}>
-    
-    <Drawer  />
-           </View> 
+        
+        <View style={{alignSelf:"center"}}>
+          <Drawer  />
+        </View> 
     <View >
       
       <TabBar
@@ -38,13 +36,9 @@ export default function Customers(props) {
       ) : indexofitem === 3 ? (
         <Text style={{ alignSelf: "center" }}>Reports Component here</Text>
       ) : null}
-      {/* <View>
-        <Text>Hello</Text>
-      </View> */}
+
       </View>    
     </View>
-    // </SafeAreaView>
-
   );
 }
 

@@ -55,7 +55,7 @@ export default function TabBar(props) {
       <View
         style={{
           height: 67,
-          width: 323,
+          width: 260,
           marginTop: 14,
           justifyContent: "space-between",
         }}
@@ -63,9 +63,7 @@ export default function TabBar(props) {
         <View
           style={{
             height: 36,
-            width: "90%",
-            // flexWrap: "wrap",
-            justifyContent: "center",
+            width: "100%",
             alignItems: "center",
             backgroundColor: "#E8E8E8",
             borderRadius: 15,
@@ -73,25 +71,20 @@ export default function TabBar(props) {
         >
           <FlatList
             data={txt}
-
             contentContainerStyle={{
               justifyContent:"space-around"
             }}
             horizontal
             keyExtractor={(item) => item}
             renderItem={({ item, index }) => {
-              // console.log(item);
-              // console.log(index);
               return (
                 <TouchableOpacity
                   onPress={() => {
                     setIndexofitem(index), setColor(colors[index]);
                   }}
                   style={{
-                    // marginRight:5,
-                    padding:2,
-                    // justifyContent:"space-evenly",
-                   backgroundColor: indexofitem === 0 && indexofitem == index
+                    padding:5,
+                    backgroundColor: indexofitem === 0 && indexofitem == index
                     ? "#ef3365"
                     : indexofitem === 1 && indexofitem == index
                     ? "#26985d"
@@ -100,7 +93,7 @@ export default function TabBar(props) {
                     : indexofitem === 3 && indexofitem == index
                     ? "yellow"
                     : "#E8E8E8",
-                    borderRadius: 10,
+                    borderRadius: 15,
                     justifyContent: "center",
                   }}
                 >
@@ -128,5 +121,3 @@ export default function TabBar(props) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({});
