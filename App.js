@@ -7,6 +7,7 @@ import Drawer from "./Src/Components/Drawer";
 import TabBar from "./Src/Components/TabBar";
 import Home from "./Screens/Home";
 import React, { useState } from "react";
+import { DataProvider } from "./Src/Hooks/useData";
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -15,12 +16,14 @@ export default function App() {
   console.log("App js selcted color", selectedcolor);
   
   return (
+    <DataProvider>
      <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Customers" component={Customers} />
       </Stack.Navigator>
     </NavigationContainer>
+    </DataProvider>
 
   );
 }

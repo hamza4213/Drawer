@@ -7,10 +7,14 @@ import {
   FlatList,
 } from "react-native";
 import React, { useState } from "react";
+import { useData } from "../Hooks/useData";
 
 export default function TabBar(props) {
-  const { txt, setIndexofitem, indexofitem, setSelectedcolor, colors } = props;
+  const { txt, setIndexofitem, indexofitem, colors } = props;
+  // console.log(indexofitem)
+  const {setColor} = useData()
   // console.log(colors);
+
   return (
     <View
       style={{
@@ -76,20 +80,13 @@ export default function TabBar(props) {
               return (
                 <TouchableOpacity
                   onPress={() => {
-                    setIndexofitem(index), setSelectedcolor(colors[index]);
+                    setIndexofitem(index), setColor(colors[index]);
                   }}
                   style={{
                     marginHorizontal: 5,
-                    backgroundColor:
-                      indexofitem === 0 && indexofitem == index
-                        ? "#ef3365"
-                        : indexofitem === 1 && indexofitem == index
-                        ? "#26985d"
-                        : indexofitem === 2 && indexofitem == index
-                        ? "#1c98be"
-                        : indexofitem === 3 && indexofitem == index
-                        ? "yellow"
-                        : "#E8E8E8",
+                    // backgroundColor:
+                    //  indexofitem 
+                    //     : "#E8E8E8",
                     borderRadius: 10,
                     justifyContent: "center",
                   }}

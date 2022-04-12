@@ -9,25 +9,27 @@ import {
 } from "react-native";
 import Customers from "../../Screens/Customers";
 import { useNavigation } from "@react-navigation/native";
+import { useData } from "../Hooks/useData";
 
 export default function Drawer(props) {
   const [expanded, setExpanded] = useState(false);
-  const { selectedcolor } = props;
+  // const { color } = props;
   const handlePress = () => setExpanded(!expanded);
-  // console.log(selectedcolor);
+  // console.log(color);
   const navigation = useNavigation();
+  const {color}= useData()
 useEffect(() => {
   
   return () => {
     
   };
-}, [selectedcolor]);
+}, [color]);
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       {expanded && (
         <View
           style={{
-            backgroundColor: selectedcolor,
+            backgroundColor: color,
             width: 62,
             alignItems: "center",
             justifyContent: "center",
@@ -183,7 +185,7 @@ useEffect(() => {
           // marginLeft: 1.5,
           borderBottomRightRadius: 15,
           borderTopRightRadius: 15,
-          backgroundColor: selectedcolor,
+          backgroundColor: color,
           // position: "relative",
           // marginTop: "50%",
         }}
