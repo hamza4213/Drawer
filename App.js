@@ -11,9 +11,7 @@ import { DataProvider } from "./Src/Hooks/useData";
 const Stack = createStackNavigator();
 
 export default function App() {
-  const colors = ["#ef3365", "#26985d", "#1c98be", "yellow"];
-  const [selectedcolor, setSelectedcolor] = useState("#ef3365");
-  console.log("App js selcted color", selectedcolor);
+ 
   
   return (
     <DataProvider>

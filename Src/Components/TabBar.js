@@ -8,11 +8,12 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { useData } from "../Hooks/useData";
+import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 export default function TabBar(props) {
   const { txt, setIndexofitem, indexofitem, colors } = props;
   // console.log(indexofitem)
-  const {setColor} = useData()
+  const {setColor,color} = useData()
   // console.log(colors);
 
   return (
@@ -72,6 +73,10 @@ export default function TabBar(props) {
         >
           <FlatList
             data={txt}
+
+            contentContainerStyle={{
+              justifyContent:"space-around"
+            }}
             horizontal
             keyExtractor={(item) => item}
             renderItem={({ item, index }) => {
@@ -83,10 +88,18 @@ export default function TabBar(props) {
                     setIndexofitem(index), setColor(colors[index]);
                   }}
                   style={{
-                    marginHorizontal: 5,
-                    // backgroundColor:
-                    //  indexofitem 
-                    //     : "#E8E8E8",
+                    // marginRight:5,
+                    padding:2,
+                    // justifyContent:"space-evenly",
+                   backgroundColor: indexofitem === 0 && indexofitem == index
+                    ? "#ef3365"
+                    : indexofitem === 1 && indexofitem == index
+                    ? "#26985d"
+                    : indexofitem === 2 && indexofitem == index
+                    ? "#1c98be"
+                    : indexofitem === 3 && indexofitem == index
+                    ? "yellow"
+                    : "#E8E8E8",
                     borderRadius: 10,
                     justifyContent: "center",
                   }}
