@@ -2,7 +2,6 @@ import { StyleSheet, Text, View } from "react-native";
 import React,{useEffect} from "react";
 import Drawer from "../Src/Components/Drawer";
 import { useData } from "../Src/Hooks/useData";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
   const  {color,setColor} = useData()

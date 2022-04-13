@@ -216,7 +216,7 @@ useEffect(() => {
         }}
         onPress={handlePress}
       >
-        <Text>Press</Text>
+        <Image style={{height:60,width:18}}source={require('../Icons/Parallel.png')}/>
       </TouchableOpacity>
     </View>
   );

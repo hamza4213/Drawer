@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import TabBar from "../Src/Components/TabBar";
 import Drawer from "../Src/Components/Drawer";
 import { useData } from "../Src/Hooks/useData";
-import { SafeAreaView } from "react-navigation";
 
 export default function Customers(props) {
   const data = ["Customers", "Potentials", "Leads", "Reports"];
@@ -41,5 +40,3 @@ export default function Customers(props) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({});

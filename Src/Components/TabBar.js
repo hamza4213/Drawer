@@ -66,6 +66,7 @@ export default function TabBar(props) {
           }}
         >
           <FlatList
+          showsHorizontalScrollIndicator={false}
             data={txt}
             contentContainerStyle={{
               justifyContent:"space-around"
