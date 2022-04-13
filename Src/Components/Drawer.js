@@ -7,15 +7,12 @@ import {
   Image,
   ScrollView,
 } from "react-native";
-import Customers from "../../Screens/Customers";
 import { useNavigation } from "@react-navigation/native";
 import { useData } from "../Hooks/useData";
 
 export default function Drawer(props) {
   const [expanded, setExpanded] = useState(false);
-  // const { color } = props;
   const handlePress = () => setExpanded(!expanded);
-  // console.log(color);
   const navigation = useNavigation();
   const {color}= useData()
 useEffect(() => {
@@ -36,8 +33,9 @@ useEffect(() => {
           }}
         >
           <ScrollView showsVerticalScrollIndicator={false}>
-           
-          <TouchableOpacity style={styles.touch}>
+          <TouchableOpacity 
+          onPress={()=>navigation.navigate("Home")}
+          style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Home.png")}
@@ -45,7 +43,9 @@ useEffect(() => {
               <Text style={styles.text}>Home</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("BookKeeping")} 
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/BookKeeping.png")}
@@ -64,7 +64,9 @@ useEffect(() => {
               <Text style={styles.text}>Customers</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Store")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Store.png")}
@@ -72,7 +74,9 @@ useEffect(() => {
               <Text style={styles.text}>Store</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Orders")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Orders.png")}
@@ -80,7 +84,9 @@ useEffect(() => {
               <Text style={styles.text}>Orders</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Suppliers")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Supplier.png")}
@@ -88,7 +94,9 @@ useEffect(() => {
               <Text style={styles.text}>Suppliers</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Messages")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Chat.png")}
@@ -96,7 +104,9 @@ useEffect(() => {
               <Text style={styles.text}>Messages</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Employees")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Employees.png")}
@@ -104,7 +114,9 @@ useEffect(() => {
               <Text style={styles.text}>Employees</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Projects")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Project.png")}
@@ -112,7 +124,9 @@ useEffect(() => {
               <Text style={styles.text}>Projects</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Contracts")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/clipboard.png")}
@@ -120,7 +134,9 @@ useEffect(() => {
               <Text style={styles.text}>Contracts</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Clouds")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Cloud.png")}
@@ -128,7 +144,9 @@ useEffect(() => {
               <Text style={styles.text}>Clouds</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Editor")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/brush.png")}
@@ -136,7 +154,9 @@ useEffect(() => {
               <Text style={styles.text}>Editor</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Calender")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/calendar.png")}
@@ -144,7 +164,9 @@ useEffect(() => {
               <Text style={styles.text}>Calender</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Assets")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Digital.png")}
@@ -152,7 +174,9 @@ useEffect(() => {
               <Text style={styles.text}>Digital Assets</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Promotion")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Promotion.png")}
@@ -160,7 +184,9 @@ useEffect(() => {
               <Text style={styles.text}>Promotion</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Bots")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Bot.png")}
@@ -168,7 +194,9 @@ useEffect(() => {
               <Text style={styles.text}>Bots</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity 
+            onPress={()=>navigation.navigate("Settings")}
+            style={styles.touch}>
               <Image
                 style={styles.image}
                 source={require("../Icons/Settings.png")}
@@ -182,12 +210,9 @@ useEffect(() => {
         style={{
           height: 55,
           width: 19,
-          // marginLeft: 1.5,
           borderBottomRightRadius: 15,
           borderTopRightRadius: 15,
           backgroundColor: color,
-          // position: "relative",
-          // marginTop: "50%",
         }}
         onPress={handlePress}
       >

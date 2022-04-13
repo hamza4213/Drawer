@@ -8,18 +8,18 @@ import { SafeAreaView } from "react-navigation";
 export default function Customers(props) {
   const data = ["Customers", "Potentials", "Leads", "Reports"];
   const [indexofitem, setIndexofitem] = useState(0);
-  // const { setSelectedcolor, colors } = props;
   const {setColor,color} = useData()
   const colors = ["#ef3365", "#26985d", "#1c98be", "yellow"];
 
   return (
 
-    <View style={{  flexDirection:"row", flex:1 }}>
+    <View style={{  flexDirection:"row", flex:1, backgroundColor:"black" }}>
         
         <View style={{alignSelf:"center"}}>
           <Drawer  />
         </View> 
-    <View >
+    
+    <View>
       
       <TabBar
         txt={data}

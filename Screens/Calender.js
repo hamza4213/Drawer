@@ -4,13 +4,13 @@ import Drawer from "../Src/Components/Drawer";
 import { useData } from "../Src/Hooks/useData";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function Home() {
+export default function Calender() {
   const  {color,setColor} = useData()
   return (
       <View style={styles.container}>
         <Drawer />
         <Text style={styles.text}>
-          This is Home Screen
+          This is Calender Screen
         </Text>
       </View>
   );

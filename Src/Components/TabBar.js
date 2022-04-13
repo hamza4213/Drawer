@@ -1,20 +1,16 @@
 import {
-  StyleSheet,
   Text,
   View,
   Image,
   TouchableOpacity,
   FlatList,
 } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import { useData } from "../Hooks/useData";
-import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 export default function TabBar(props) {
   const { txt, setIndexofitem, indexofitem, colors } = props;
-  // console.log(indexofitem)
   const {setColor,color} = useData()
-  // console.log(colors);
 
   return (
     <View
