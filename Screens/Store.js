@@ -12,8 +12,11 @@ export default function Store({navigation}) {
   };
   useEffect(() => {
     setColor("#ef3365")
+    setIndex(3)
+    return () => {
+setIndex(2)    };
   }, []);
-  const {color,setColor,expanded,setExpanded}= useData()
+  const {color,setColor,expanded,setExpanded,setIndex}= useData()
   return (
     <GestureRecognizer
         onSwipeUp={(state) => navigation.navigate("Orders")}

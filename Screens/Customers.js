@@ -8,7 +8,7 @@ import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 export default function Customers({navigation}) {
   const data = ["Customers", "Potentials", "Leads", "Reports"];
   const [indexofitem, setIndexofitem] = useState(0);
-  const {color,setColor,expanded,setExpanded}= useData()
+  const {color,setColor,expanded,setExpanded,setIndex}= useData()
   const colors = ["#ef3365", "#26985d", "#1c98be", "yellow"];
   const config = {
     velocityThreshold: 0.3,
@@ -16,6 +16,9 @@ export default function Customers({navigation}) {
   };
   useEffect(() => {
     setColor("#ef3365")
+    setIndex(2)
+    return () => {
+setIndex(1)    };
   }, []);
   return (
     <GestureRecognizer

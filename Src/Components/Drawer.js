@@ -6,6 +6,7 @@ import {
   View,
   Image,
   ScrollView,
+  FlatList
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useData } from "../Hooks/useData";
@@ -13,7 +14,7 @@ import { useData } from "../Hooks/useData";
 export default function Drawer(props) {
   const handlePress = () => setExpanded(!expanded);
   const navigation = useNavigation();
-  const {color,setColor,expanded,setExpanded}= useData()
+  const {color,setColor,expanded,setExpanded,ind}= useData()
 useEffect(() => {
   
   return () => {
@@ -21,8 +22,79 @@ useEffect(() => {
   };
 }, [color]);
 
+const DATA = [
+  {
+    imgsrc:require("../Icons/Home.png"),
+    name:"Home",
+  },
+  {
+    imgsrc:require("../Icons/BookKeeping.png"),
+    name:"BookKeeping"
+  },
+  {
+    imgsrc:require("../Icons/User.png"),
+    name:"Customers"
+  },
+  {
+    imgsrc:require("../Icons/Store.png"),
+    name:"Store"
+  },
+  {
+    imgsrc:require("../Icons/Orders.png"),
+    name:"Orders"
+  },
+  {
+    imgsrc:require("../Icons/Supplier.png"),
+    name:"Suppliers"
+  },
+  {
+    imgsrc:require("../Icons/Chat.png"),
+    name:"Messages"
+  },
+  {
+    imgsrc:require("../Icons/Employees.png"),
+    name:"Employees"
+  },
+  {
+    imgsrc:require("../Icons/Project.png"),
+    name:"Projects"
+  },
+  {
+    imgsrc:require("../Icons/clipboard.png"),
+    name:"Contracts"
+  },
+  {
+    imgsrc:require("../Icons/Cloud.png"),
+    name:"Clouds"
+  },
+  {
+    imgsrc:require("../Icons/brush.png"),
+    name:"Editor"
+  },
+  {
+    imgsrc:require("../Icons/calendar.png"),
+    name:"Calender"
+  },
+  {
+    imgsrc:require("../Icons/Digital.png"),
+    name:"Assets"
+  },
+  {
+    imgsrc:require("../Icons/Promotion.png"),
+    name:"Promotion"
+  },
+  {
+    imgsrc:require("../Icons/Bot.png"),
+    name:"Bots"
+  },
+  {
+    imgsrc:require("../Icons/Settings.png"),
+    name:"Settings"
+  }
+]
+
   return (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
+    <View style={{ flexDirection: "row", alignItems: "center", marginTop:40 }}>
       {expanded && (
         <View
           style={{
@@ -32,184 +104,35 @@ useEffect(() => {
             justifyContent: "center",
           }}
         >
-          <ScrollView showsVerticalScrollIndicator={false}>
-          <TouchableOpacity 
-          onPress={()=>navigation.navigate("Home")}
-          style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Home.png")}
-              />
-              <Text style={styles.text}>Home</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("BookKeeping")} 
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/BookKeeping.png")}
-              />
-              <Text style={styles.text}>BookKeeping</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Customers")}
-              style={styles.touch}
-            >
-              <Image
-                style={styles.image}
-                source={require("../Icons/User.png")}
-              />
-              <Text style={styles.text}>Customers</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Store")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Store.png")}
-              />
-              <Text style={styles.text}>Store</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Orders")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Orders.png")}
-              />
-              <Text style={styles.text}>Orders</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Suppliers")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Supplier.png")}
-              />
-              <Text style={styles.text}>Suppliers</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Messages")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Chat.png")}
-              />
-              <Text style={styles.text}>Messages</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Employees")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Employees.png")}
-              />
-              <Text style={styles.text}>Employees</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Projects")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Project.png")}
-              />
-              <Text style={styles.text}>Projects</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Contracts")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/clipboard.png")}
-              />
-              <Text style={styles.text}>Contracts</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Clouds")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Cloud.png")}
-              />
-              <Text style={styles.text}>Clouds</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Editor")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/brush.png")}
-              />
-              <Text style={styles.text}>Editor</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Calender")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/calendar.png")}
-              />
-              <Text style={styles.text}>Calender</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Assets")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Digital.png")}
-              />
-              <Text style={styles.text}>Digital Assets</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Promotion")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Promotion.png")}
-              />
-              <Text style={styles.text}>Promotion</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Bots")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Bot.png")}
-              />
-              <Text style={styles.text}>Bots</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-            onPress={()=>navigation.navigate("Settings")}
-            style={styles.touch}>
-              <Image
-                style={styles.image}
-                source={require("../Icons/Settings.png")}
-              />
-              <Text style={styles.text}>Settings</Text>
-            </TouchableOpacity>
-          </ScrollView>
+          <FlatList showsVerticalScrollIndicator={false} 
+          data={DATA} 
+          keyExtractor={item=>item.name} 
+          renderItem={({item,index})=>{
+            // console.log(index)
+            return(
+             <TouchableOpacity 
+             onPress={()=>navigation.navigate(item.name)}
+             style={{  alignItems: "center",
+    marginVertical: 10,}}>
+                 <Image
+                   style={{ height:index===ind?21: 19.5,
+                    width:index===ind?21: 19,}}
+                   source={item.imgsrc}
+                 />
+                 <Text style={{  fontSize:index===ind?10: 8,
+    fontWeight: index===ind?"bold":"normal",
+    marginTop: 5,
+    color: "white",}}>{item.name}</Text>
+               </TouchableOpacity>)
+          }}
+        />
+          
         </View>
       )}
       <TouchableOpacity
         style={{
           height: 55,
-          width: 19,
+          width: 25,
           borderBottomRightRadius: 15,
           borderTopRightRadius: 15,
           backgroundColor: color,
@@ -229,7 +152,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 8,
-    fontWeight: "bold",
+    // fontWeight: "bold",
     marginTop: 5,
     color: "white",
   },

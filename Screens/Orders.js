@@ -10,9 +10,12 @@ export default function Orders({navigation}) {
     velocityThreshold: 0.3,
     directionalOffsetThreshold: 80
   };
-  const {color,setColor,expanded,setExpanded}= useData()
+  const {color,setColor,expanded,setExpanded,setIndex}= useData()
   useEffect(() => {
     setColor("#ef3365")
+    setIndex(4)
+    return () => {
+setIndex(3)    };
   }, []);
   return (
     <GestureRecognizer

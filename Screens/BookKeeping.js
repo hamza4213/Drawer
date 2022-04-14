@@ -13,10 +13,14 @@ export default function BookKeeping({navigation}) {
     velocityThreshold: 0.3,
     directionalOffsetThreshold: 80
   };
-  const {color,setColor,expanded,setExpanded}= useData()
+  const {color,setColor,expanded,setExpanded,setIndex}= useData()
   useEffect(() => {
     setColor("#ef3365")
+    setIndex(1)
+    return () => {
+setIndex(0)    };
   }, []);
+
   return (
     <GestureRecognizer
         onSwipeUp={(state) => navigation.navigate("Customers")}

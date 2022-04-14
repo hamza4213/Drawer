@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from "react-native";
-import React from "react";
+import React,{useEffect} from "react";
 import { useData } from "../Hooks/useData";
 
 export default function TabBar(props) {
@@ -19,7 +19,7 @@ export default function TabBar(props) {
         width: "100%",
         backgroundColor:"white",
         flexDirection: "row",
-        marginTop:50
+        marginTop:40
       }}
     >
       <View

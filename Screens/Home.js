@@ -11,8 +11,9 @@ export default function Home({navigation}) {
   };
   useEffect(() => {
     setColor("#ef3365")
+    setIndex(0)
   }, []);
-  const {color,setColor,expanded,setExpanded}= useData()
+  const {color,setColor,expanded,setExpanded,setIndex}= useData()
   return (
     <GestureRecognizer
         onSwipeUp={(state) => navigation.navigate("BookKeeping")}
