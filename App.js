@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./Screens/Home";
 import BookKeeping from "./Screens/BookKeeping";
@@ -20,12 +20,15 @@ import Bots from "./Screens/Bots";
 import Settings from "./Screens/Settings";
 import { DataProvider } from "./Src/Hooks/useData";
 const Stack = createStackNavigator();
-
+import { Navigation } from "react-native-navigation";
 export default function App() {
+  
+  
 
   return (
     <DataProvider>
-    <NavigationContainer>
+      <NavigationContainer>
+      
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Customers" component={Customers} />
@@ -46,6 +49,7 @@ export default function App() {
         <Stack.Screen name="Settings" component={Settings}/>
       </Stack.Navigator>
     </NavigationContainer>
+
     </DataProvider>
   );
 }

@@ -3,16 +3,36 @@ import React,{useEffect} from "react";
 import Drawer from "../Src/Components/Drawer";
 import { useData } from "../Src/Hooks/useData";
 import { SafeAreaView } from "react-native-safe-area-context";
+import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
-export default function Editor() {
-  const  {color,setColor} = useData()
+export default function Editor({navigation}) {
+  const config = {
+    velocityThreshold: 0.3,
+    directionalOffsetThreshold: 80
+  };
+  const {color,setColor,expanded,setExpanded}= useData()
+  useEffect(() => {
+    setColor("#ef3365")
+  }, []);
   return (
+    <GestureRecognizer
+        onSwipeUp={(state) => navigation.navigate("Calender")}
+        onSwipeDown={(state) => navigation.navigate("Clouds")}
+        onSwipeLeft={(state) => setExpanded(false)}
+        onSwipeRight={(state) => setExpanded(true)}
+        config={config}
+        style={{
+          flex: 1,
+          backgroundColor: "teal"
+        }}
+        >    
       <View style={styles.container}>
         <Drawer />
         <Text style={styles.text}>
           This is Editor Screen
         </Text>
       </View>
+      </GestureRecognizer>
   );
 }
 

@@ -11,16 +11,16 @@ import { useNavigation } from "@react-navigation/native";
 import { useData } from "../Hooks/useData";
 
 export default function Drawer(props) {
-  const [expanded, setExpanded] = useState(false);
   const handlePress = () => setExpanded(!expanded);
   const navigation = useNavigation();
-  const {color}= useData()
+  const {color,setColor,expanded,setExpanded}= useData()
 useEffect(() => {
   
   return () => {
     
   };
 }, [color]);
+
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
       {expanded && (

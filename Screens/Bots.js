@@ -3,16 +3,33 @@ import React,{useEffect} from "react";
 import Drawer from "../Src/Components/Drawer";
 import { useData } from "../Src/Hooks/useData";
 import { SafeAreaView } from "react-native-safe-area-context";
+import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 
-export default function Bots() {
-  const  {color,setColor} = useData()
+export default function Bots({navigation}) {
+  const config = {
+    velocityThreshold: 0.3,
+    directionalOffsetThreshold: 80
+  };
+  const {color,setColor,expanded,setExpanded}= useData()
   return (
+    <GestureRecognizer
+        onSwipeUp={(state) => navigation.navigate("Settings")}
+        onSwipeDown={(state) => navigation.navigate("Promotion")}
+        onSwipeLeft={(state) => setExpanded(false)}
+        onSwipeRight={(state) => setExpanded(true)}
+        config={config}
+        style={{
+          flex: 1,
+          backgroundColor: "teal"
+        }}
+        >    
       <View style={styles.container}>
         <Drawer />
         <Text style={styles.text}>
           This is Bots Screen
         </Text>
       </View>
+      </GestureRecognizer>
   );
 }
 

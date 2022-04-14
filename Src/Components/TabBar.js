@@ -10,7 +10,7 @@ import { useData } from "../Hooks/useData";
 
 export default function TabBar(props) {
   const { txt, setIndexofitem, indexofitem, colors } = props;
-  const {setColor,color} = useData()
+  const {setColor,color,expanded} = useData()
 
   return (
     <View
@@ -19,12 +19,13 @@ export default function TabBar(props) {
         width: "100%",
         backgroundColor:"white",
         flexDirection: "row",
+        marginTop:50
       }}
     >
       <View
         style={{
           height: 74,
-          width: 71,
+          width: 90,
           backgroundColor: "white",
           alignItems: "center",
           margin: 10,
@@ -59,7 +60,7 @@ export default function TabBar(props) {
         <View
           style={{
             height: 36,
-            width: "100%",
+            width: expanded?"80%":"100%",
             alignItems: "center",
             backgroundColor: "#E8E8E8",
             borderRadius: 15,
@@ -80,7 +81,7 @@ export default function TabBar(props) {
                     setIndexofitem(index), setColor(colors[index]);
                   }}
                   style={{
-                    padding:5,
+                    paddingHorizontal:8,
                     backgroundColor: indexofitem === 0 && indexofitem == index
                     ? "#ef3365"
                     : indexofitem === 1 && indexofitem == index
@@ -94,7 +95,7 @@ export default function TabBar(props) {
                     justifyContent: "center",
                   }}
                 >
-                  <Text>{item}</Text>
+                  <Text style={{fontSize:expanded?8:10,fontWeight:"bold",color: indexofitem == index?"white":"black"}}>{item}</Text>
                 </TouchableOpacity>
               );
             }}

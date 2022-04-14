@@ -3,9 +3,11 @@ export const DataContext = React.createContext({});
 
 export const DataProvider = ({children}) => {
     const [color, setColor] = useState("#ef3365");
+    const [expanded, setExpanded] = useState(false);
 
     const contextValue = {
-    color,setColor
+    color,setColor,
+    expanded,setExpanded
     }
     return (
         <DataContext.Provider value={contextValue}>{children}</DataContext.Provider>
