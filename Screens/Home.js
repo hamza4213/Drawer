@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React,{useEffect} from "react";
 import Drawer from "../Src/Components/Drawer";
 import { useData } from "../Src/Hooks/useData";
-import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
+import GestureRecognizer from 'react-native-swipe-gestures';
 
 export default function Home({navigation}) {
   const config = {
@@ -13,7 +13,7 @@ export default function Home({navigation}) {
     setColor("#ef3365")
     setIndex(0)
   }, []);
-  const {color,setColor,expanded,setExpanded,setIndex}= useData()
+  const {setColor,setExpanded,setIndex}= useData()
   return (
     <GestureRecognizer
         onSwipeUp={(state) => navigation.navigate("BookKeeping")}

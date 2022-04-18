@@ -1,11 +1,10 @@
-import React, { useState,useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
   Image,
-  ScrollView,
   FlatList
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -14,7 +13,7 @@ import { useData } from "../Hooks/useData";
 export default function Drawer(props) {
   const handlePress = () => setExpanded(!expanded);
   const navigation = useNavigation();
-  const {color,setColor,expanded,setExpanded,ind}= useData()
+  const {color,expanded,setExpanded,ind}= useData()
 useEffect(() => {
   
   return () => {
@@ -108,25 +107,25 @@ const DATA = [
           data={DATA} 
           keyExtractor={item=>item.name} 
           renderItem={({item,index})=>{
-            // console.log(index)
             return(
-             <TouchableOpacity 
-             onPress={()=>navigation.navigate(item.name)}
-             style={{  alignItems: "center",
-    marginVertical: 10,}}>
-                 <Image
-                   style={{ height:index===ind?21: 19.5,
+              <TouchableOpacity 
+              onPress={()=>navigation.navigate(item.name)}
+              style={{  alignItems: "center",
+                        marginVertical: 10,}}>
+                  <Image
+                    style={{ height:index===ind?21: 19.5,
                     width:index===ind?21: 19,}}
-                   source={item.imgsrc}
-                 />
-                 <Text style={{  fontSize:index===ind?10: 8,
-    fontWeight: index===ind?"bold":"normal",
-    marginTop: 5,
-    color: "white",}}>{item.name}</Text>
-               </TouchableOpacity>)
+                    source={item.imgsrc}
+                  />
+                  <Text style={{  fontSize:index===ind?10: 8,
+                                fontWeight: index===ind?"bold":"normal",
+                                marginTop: 5,
+                                color: "white",}}>
+                                  {item.name}
+                  </Text>
+              </TouchableOpacity>)
           }}
         />
-          
         </View>
       )}
       <TouchableOpacity
@@ -152,7 +151,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 8,
-    // fontWeight: "bold",
     marginTop: 5,
     color: "white",
   },
